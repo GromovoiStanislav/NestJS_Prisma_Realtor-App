@@ -1,0 +1,359 @@
+{
+	"info": {
+		"_postman_id": "0c46df4b-4704-4e34-9ff9-6de69081c414",
+		"name": "Realtor-App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth/signup/:BUYER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Stas\",\r\n    \"phone\": \"04-04-05\",\r\n    \"email\": \"stas@email.com\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/signup/BUYER",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"signup",
+						"BUYER"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/signup/:REALTOR",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Tom\",\r\n    \"phone\": \"07-04-05\",\r\n    \"email\": \"tom@email.com\",\r\n    \"password\":\"12345\",\r\n    \"productKey\":\"$2a$10$NbpQq7LqFaCWx7QcUjC5jeD6sGeeq7opgSxxjLN6CuO8.b5Wx2j/6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/signup/REALTOR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"signup",
+						"REALTOR"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"stas@email.com\",\r\n    \"password\":\"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/key",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"tom@email.com\",\r\n    \"userType\":\"REALTOR\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/key",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"key"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/me",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU3RhcyIsImlkIjoxLCJpYXQiOjE2ODI2NTk0MDUsImV4cCI6MTY4NjI1OTQwNX0.Ou2Kif9YkcpPhZBVdSRv8e11rRz7cPUDaBArbqPYlF4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/auth/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "home",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVG9tIiwiaWQiOjIsImlhdCI6MTY4MjY2MTQzNywiZXhwIjoxNjg2MjYxNDM3fQ.2CVVtjmonCwQ1JuH4mkSb70mfUEW4L1O_C9uChyToO4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": \"address.....3\",\r\n    \"numberOfBedrooms\":2,\r\n    \"numberOfBathrooms\":1,\r\n    \"city\":\"Oslo\",\r\n    \"price\": 40000,\r\n    \"landSize\":20,\r\n    \"propertyType\":\"RESIDENTIAL\",\r\n    \"images\":[{\"url\":\"url....1\"},{\"url\":\"url....2\"},{\"url\":\"url....3\"}]\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "home",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/home?minPrice=10000&maxPrice=60000&city=Oslo&propertyType=CONDO",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"home"
+					],
+					"query": [
+						{
+							"key": "minPrice",
+							"value": "10000"
+						},
+						{
+							"key": "maxPrice",
+							"value": "60000"
+						},
+						{
+							"key": "city",
+							"value": "Oslo"
+						},
+						{
+							"key": "propertyType",
+							"value": "CONDO"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "home/:id/messages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVG9tIiwiaWQiOjIsImlhdCI6MTY4MjY2MTQzNywiZXhwIjoxNjg2MjYxNDM3fQ.2CVVtjmonCwQ1JuH4mkSb70mfUEW4L1O_C9uChyToO4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/home/4/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"home",
+						"4",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "home/:id/inquire",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU3RhcyIsImlkIjoxLCJpYXQiOjE2ODI2NzI0NjEsImV4cCI6MTY4NjI3MjQ2MX0.G1v_u6y8sYnkYJelVdWWMDckpu6qloDe1RN4Xfx8KlY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\":\"message.......3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/home/4/inquire",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"home",
+						"4",
+						"inquire"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "home/:id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/home/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"home",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "home/:id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVG9tIiwiaWQiOjIsImlhdCI6MTY4MjY2MTQzNywiZXhwIjoxNjg2MjYxNDM3fQ.2CVVtjmonCwQ1JuH4mkSb70mfUEW4L1O_C9uChyToO4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/home/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"home",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
